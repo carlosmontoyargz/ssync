@@ -3,7 +3,9 @@ package com.mino.ssync.model;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.ManyToOne;
 
 /**
  * @author Carlos Montoya
@@ -11,15 +13,15 @@ import javax.persistence.*;
  */
 @Entity
 @Data
-public class DocumentoContenido
+public class Preprocesado
 {
 	@Id
+	@GeneratedValue
 	private Integer id;
 
-	@MapsId
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	private Documento documento;
 
-	@Column(nullable = false)
-	private String contenido;
+	@ManyToOne
+	private Cliente cliente;
 }

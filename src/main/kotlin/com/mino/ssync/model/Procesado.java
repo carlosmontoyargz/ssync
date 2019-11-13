@@ -1,11 +1,13 @@
 package com.mino.ssync.model;
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.ManyToOne;
+import java.time.LocalDateTime;
 
 /**
  * @author Carlos Montoya
@@ -13,7 +15,7 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 @Data
-public class DocumentoPreprocesado
+public class Procesado
 {
 	@Id
 	@GeneratedValue
@@ -24,4 +26,7 @@ public class DocumentoPreprocesado
 
 	@ManyToOne
 	private Cliente cliente;
+
+	@CreatedDate
+	private LocalDateTime fecha;
 }
