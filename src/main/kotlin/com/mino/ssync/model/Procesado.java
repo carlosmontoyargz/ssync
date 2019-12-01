@@ -22,7 +22,7 @@ public class Procesado
 	private Integer id;
 
 	@ManyToOne
-	private Documento documento;
+	private DocumentoContenido documentoContenido;
 
 	@ManyToOne
 	private Cliente cliente;

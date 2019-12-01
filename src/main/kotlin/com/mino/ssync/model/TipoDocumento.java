@@ -24,18 +24,14 @@ public class TipoDocumento
 	private String clave;
 
 	@ManyToOne
-	@JoinColumn(nullable = false)
 	private String descripcion;
 
 	@Enumerated(EnumType.STRING)
-	private Sentido sentido;
-
-	@CreatedDate
-	private LocalDateTime insertado;
+	private SentidoDocumento sentido;
 
 	@CreatedDate
 	private LocalDateTime creado;
 
 	@Column(nullable = false)
-	private Boolean activo = false;
+	private Boolean activo = true;
 }
